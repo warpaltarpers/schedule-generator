@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:leaffilter_generator/components/reusable_card.dart';
+import 'package:leaffilter_generator/components/constants.dart';
+import 'package:leaffilter_generator/components/text_card.dart';
 
 class Generator extends StatefulWidget {
   @override
@@ -6,6 +9,8 @@ class Generator extends StatefulWidget {
 }
 
 class _GeneratorState extends State<Generator> {
+  TextCard cityCard = new TextCard(label: 'LOCATION');
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,18 +21,24 @@ class _GeneratorState extends State<Generator> {
              colors: [const Color(0xff56ab2f), const Color(0xffa8e063)],
           )
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Expanded(
-              child: Text(
-                'This is just a test',
-              ),
-            )
-          ],
+        child: SafeArea(
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                Expanded(
+                  child: ReusableCard(
+                    cardColor: kActiveCardColor,
+                    cardChild: cityCard,
+                    onPress: (){},
+                  ),
+                )
+              ],
+            ),
+          )
         ),
-      )
+      ),
     );
   }
 }
