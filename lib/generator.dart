@@ -12,7 +12,23 @@ class Generator extends StatefulWidget {
 class _GeneratorState extends State<Generator> {
   TextCard jobNumCard = new TextCard(label: 'LAST JOB #', isAndroid: Platform.isAndroid ? true : false,);
   TextCard cityCard = new TextCard(label: 'LOCATION', isAndroid: Platform.isAndroid ? true : false,);
+  
   int jobFoot = 0;
+  
+  Map<String, bool> filterType = {
+    'Regular 5\"': false,
+    'Regular 6\"': false,
+    'Half-Round 5\"': false,
+    'Half-Round 6\"': false,
+    'Half-Round 7\"': false,
+  };
+
+  Map<String, bool> filterColor = {
+    'w': false,
+    'c': false,
+    'b': false,
+    'g': false,
+  };
   
   @override
   Widget build(BuildContext context) {
