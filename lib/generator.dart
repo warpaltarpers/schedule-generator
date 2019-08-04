@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:leaffilter_generator/components/reusable_card.dart';
 import 'package:leaffilter_generator/components/constants.dart';
@@ -19,6 +20,8 @@ class _GeneratorState extends State<Generator> {
 
   List<String> sizes = ['5\"', '6\"', 'HR5\"', 'HR6\"', 'HR7\"'];
   List<String> colors = ['W', 'C', 'B', 'G']; // White, Clay, Beige, Gray
+
+  List<Text> pickerItems = [];
   
   @override
   Widget build(BuildContext context) {
@@ -110,10 +113,8 @@ class _GeneratorState extends State<Generator> {
                     ),
                   ),
                 // Filter type and size
-                Row(
-                  children: <Widget>[
-
-                  ],
+                Expanded(
+                  //TODO: Add in selection for filter size and color
                 ),
               ],
             ),
