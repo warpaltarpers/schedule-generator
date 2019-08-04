@@ -112,71 +112,7 @@ class _GeneratorState extends State<Generator> {
                 // Filter type and size
                 Row(
                   children: <Widget>[
-                    Expanded(
-                      child: ReusableCard(
-                        cardColor: kInactiveCardColor,
-                        cardChild: Text(
-                          sizes[0],
-                          style: TextStyle(
-                            fontSize: 32.0,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w900,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: ReusableCard(
-                        cardColor: kInactiveCardColor,
-                        cardChild: Text(
-                          sizes[0],
-                          style: TextStyle(
-                            fontSize: 32.0,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w900,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: ReusableCard(
-                        cardColor: kInactiveCardColor,
-                        cardChild: Text(
-                          sizes[0],
-                          style: TextStyle(
-                            fontSize: 32.0,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w900,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: ReusableCard(
-                        cardColor: kInactiveCardColor,
-                        cardChild: Text(
-                          sizes[0],
-                          style: TextStyle(
-                            fontSize: 32.0,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w900,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: ReusableCard(
-                        cardColor: kInactiveCardColor,
-                        cardChild: Text(
-                          sizes[0],
-                          style: TextStyle(
-                            fontSize: 32.0,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w900,
-                          ),
-                        ),
-                      ),
-                    ),
+                    
                   ],
                 ),
               ],
