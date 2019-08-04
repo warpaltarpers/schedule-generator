@@ -23,6 +23,8 @@ class _GeneratorState extends State<Generator> {
     'Half-Round 7\"': false,
   };
 
+  List<String> ft4Gen = ['5\"', '6\"', 'HR5\"', 'HR6\"', 'HR7\"'];
+
   Map<String, bool> filterColor = {
     'w': false,
     'c': false,
