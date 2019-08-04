@@ -112,7 +112,7 @@ class _GeneratorState extends State<Generator> {
                 // Filter type and size
                 Row(
                   children: <Widget>[
-                    
+
                   ],
                 ),
               ],
