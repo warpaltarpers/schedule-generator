@@ -45,7 +45,7 @@ class TextCard extends StatelessWidget {
         ),
         SizedBox(height: 15.0),
         Padding(
-          padding: const EdgeInsets.all(15.0),
+          padding: const EdgeInsets.fromLTRB(15, 0, 15, 15),
           child: isAndroid ? androidText() : iOSText(),
         )
       ],
