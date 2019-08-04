@@ -39,10 +39,13 @@ class TextCard extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Text(label, style: kLabelTextStyle,),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(0, 15, 0, 0),
+          child: Text(label, style: kLabelTextStyle,),
+        ),
         SizedBox(height: 15.0),
         Padding(
-          padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
+          padding: const EdgeInsets.all(15.0),
           child: isAndroid ? androidText() : iOSText(),
         )
       ],

@@ -10,6 +10,7 @@ class Generator extends StatefulWidget {
 }
 
 class _GeneratorState extends State<Generator> {
+  TextCard jobNumCard = new TextCard(label: 'LAST JOB #', isAndroid: Platform.isAndroid ? true : false,);
   TextCard cityCard = new TextCard(label: 'LOCATION', isAndroid: Platform.isAndroid ? true : false,);
   
   @override
@@ -28,15 +29,25 @@ class _GeneratorState extends State<Generator> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                // City card
-                Expanded(
-                  child: ReusableCard(
-                    cardColor: kActiveCardColor,
-                    cardChild: cityCard,
-                    onPress: (){},
-                  ),
+                Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: ReusableCard(
+                        cardColor: kActiveCardColor,
+                        cardChild: jobNumCard,
+                        onPress: (){},
+                      ),
+                    ),
+                    // City card
+                    Expanded(
+                      child: ReusableCard(
+                        cardColor: kActiveCardColor,
+                        cardChild: cityCard,
+                        onPress: (){},
+                      ),
+                    ),
+                  ],
                 ),
-
               ],
             ),
           )
