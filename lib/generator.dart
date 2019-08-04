@@ -16,11 +16,11 @@ class _GeneratorState extends State<Generator> {
   int jobFoot = 0;
   
   Map<String, bool> filterType = {
-    'Regular 5\"': false,
-    'Regular 6\"': false,
-    'Half-Round 5\"': false,
-    'Half-Round 6\"': false,
-    'Half-Round 7\"': false,
+    'r5': false,
+    'r6': false,
+    'hr5': false,
+    'hr6': false,
+    'hr7': false,
   };
 
   List<String> ft4Gen = ['5\"', '6\"', 'HR5\"', 'HR6\"', 'HR7\"'];
