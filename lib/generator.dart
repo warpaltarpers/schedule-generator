@@ -3,7 +3,6 @@ import 'package:leaffilter_generator/components/reusable_card.dart';
 import 'package:leaffilter_generator/components/constants.dart';
 import 'package:leaffilter_generator/components/text_card.dart';
 import 'dart:io' show Platform;
-import 'package:leaffilter_generator/components/filter_choice.dart';
 
 class Generator extends StatefulWidget {
   @override
@@ -114,7 +113,69 @@ class _GeneratorState extends State<Generator> {
                 Row(
                   children: <Widget>[
                     Expanded(
-                      
+                      child: ReusableCard(
+                        cardColor: kInactiveCardColor,
+                        cardChild: Text(
+                          sizes[0],
+                          style: TextStyle(
+                            fontSize: 32.0,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w900,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: ReusableCard(
+                        cardColor: kInactiveCardColor,
+                        cardChild: Text(
+                          sizes[0],
+                          style: TextStyle(
+                            fontSize: 32.0,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w900,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: ReusableCard(
+                        cardColor: kInactiveCardColor,
+                        cardChild: Text(
+                          sizes[0],
+                          style: TextStyle(
+                            fontSize: 32.0,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w900,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: ReusableCard(
+                        cardColor: kInactiveCardColor,
+                        cardChild: Text(
+                          sizes[0],
+                          style: TextStyle(
+                            fontSize: 32.0,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w900,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: ReusableCard(
+                        cardColor: kInactiveCardColor,
+                        cardChild: Text(
+                          sizes[0],
+                          style: TextStyle(
+                            fontSize: 32.0,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w900,
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                 ),
