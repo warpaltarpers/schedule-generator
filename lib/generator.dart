@@ -3,6 +3,7 @@ import 'package:leaffilter_generator/components/reusable_card.dart';
 import 'package:leaffilter_generator/components/constants.dart';
 import 'package:leaffilter_generator/components/text_card.dart';
 import 'dart:io' show Platform;
+import 'package:leaffilter_generator/components/filter_choice.dart';
 
 class Generator extends StatefulWidget {
   @override
@@ -14,23 +15,11 @@ class _GeneratorState extends State<Generator> {
   TextCard cityCard = new TextCard(label: 'LOCATION', isAndroid: Platform.isAndroid ? true : false,);
   
   int jobFoot = 0;
-  
-  Map<String, bool> filterType = {
-    'r5': false,
-    'r6': false,
-    'hr5': false,
-    'hr6': false,
-    'hr7': false,
-  };
+  String filterSize;
+  String filterColor;
 
-  List<String> ft4Gen = ['5\"', '6\"', 'HR5\"', 'HR6\"', 'HR7\"'];
-
-  Map<String, bool> filterColor = {
-    'w': false,
-    'c': false,
-    'b': false,
-    'g': false,
-  };
+  List<String> sizes = ['5\"', '6\"', 'HR5\"', 'HR6\"', 'HR7\"'];
+  List<String> colors = ['W', 'C', 'B', 'G']; // White, Clay, Beige, Gray
   
   @override
   Widget build(BuildContext context) {
@@ -123,7 +112,11 @@ class _GeneratorState extends State<Generator> {
                   ),
                 // Filter type and size
                 Row(
-                  
+                  children: <Widget>[
+                    Expanded(
+                      
+                    ),
+                  ],
                 ),
               ],
             ),
