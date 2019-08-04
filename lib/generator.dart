@@ -115,6 +115,7 @@ class _GeneratorState extends State<Generator> {
                 // Filter type and size
                 Expanded(
                   //TODO: Add in selection for filter size and color
+                  child: Text('Look at TODO in code'),
                 ),
               ],
             ),
