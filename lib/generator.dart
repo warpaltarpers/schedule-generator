@@ -4,6 +4,7 @@ import 'package:leaffilter_generator/components/reusable_card.dart';
 import 'package:leaffilter_generator/components/constants.dart';
 import 'package:leaffilter_generator/components/text_card.dart';
 import 'dart:io' show Platform;
+import 'components/bottom_button.dart';
 
 class Generator extends StatefulWidget {
   @override
@@ -155,9 +156,12 @@ class _GeneratorState extends State<Generator> {
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text(
-                          'JOB FOOTAGE',
-                          style: kLabelTextStyle,
+                        Padding(
+                          padding: const EdgeInsets.only(top: 8.0),
+                          child: Text(
+                            'JOB FOOTAGE',
+                            style: kLabelTextStyle,
+                          ),
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -266,9 +270,12 @@ class _GeneratorState extends State<Generator> {
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text(
-                          '# OF MITERS',
-                          style: kLabelTextStyle,
+                        Padding(
+                          padding: const EdgeInsets.only(top: 8.0),
+                          child: Text(
+                            '# OF MITERS',
+                            style: kLabelTextStyle,
+                          ),
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -366,6 +373,10 @@ class _GeneratorState extends State<Generator> {
                       ),
                     ),
                   ],
+                ),
+                BottomButton(
+                  buttonTitle: 'GENERATE',
+                  onTap: (){},
                 ),
               ],
             ),
