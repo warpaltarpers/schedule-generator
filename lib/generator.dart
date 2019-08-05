@@ -18,6 +18,8 @@ class _GeneratorState extends State<Generator> {
   int numMiters = 0;
   String filterSize = '5\"';
   String filterColor = 'W';
+  String storyCount = '1';
+  String paymentType = 'C';
 
   List<DropdownMenuItem<String>> sizes = [
     DropdownMenuItem(
@@ -45,23 +47,71 @@ class _GeneratorState extends State<Generator> {
   List<DropdownMenuItem<String>> colors = [
     DropdownMenuItem(
       value: 'W',
-      child: Text('W'),
+      child: Text('White'),
     ),
     DropdownMenuItem(
       value: 'C',
-      child: Text('C'),
+      child: Text('Clay'),
     ),
     DropdownMenuItem(
       value: 'B',
-      child: Text('B'),
+      child: Text('Beige'),
     ),
     DropdownMenuItem(
       value: 'G',
-      child: Text('G'),
+      child: Text('Gray'),
     ),
   ]; // White, Clay, Beige, Gray
 
-  List<Text> pickerItems = [];
+  List<DropdownMenuItem<String>> stories = [
+    DropdownMenuItem(
+      value: '1',
+      child: Text('1'),
+    ),
+    DropdownMenuItem(
+      value: '2',
+      child: Text('2'),
+    ),
+    DropdownMenuItem(
+      value: '3',
+      child: Text('3'),
+    ),
+    DropdownMenuItem(
+      value: '1/2',
+      child: Text('1/2'),
+    ),
+    DropdownMenuItem(
+      value: '1/3',
+      child: Text('1/3'),
+    ),
+    DropdownMenuItem(
+      value: '2/3',
+      child: Text('2/3'),
+    ),
+    DropdownMenuItem(
+      value: '1/2/3',
+      child: Text('1/2/3'),
+    ),
+  ];
+
+  List<DropdownMenuItem<String>> payments = [
+    DropdownMenuItem(
+      value: 'C',
+      child: Text('Cash'),
+    ),
+    DropdownMenuItem(
+      value: 'CK',
+      child: Text('Check'),
+    ),
+    DropdownMenuItem(
+      value: 'CC',
+      child: Text('Credit Card'),
+    ),
+    DropdownMenuItem(
+      value: 'F',
+      child: Text('Finance'),
+    ),
+  ];
   
   @override
   Widget build(BuildContext context) {
@@ -162,14 +212,20 @@ class _GeneratorState extends State<Generator> {
                         cardChild: Center(
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: DropdownButton<String>(
-                              items: sizes,
-                              onChanged: (String newValue) {
-                                setState(() {
-                                  filterSize = newValue;
-                                });
-                              },
-                              value: filterSize,
+                            child: Column(
+                              children: <Widget>[
+                                Text('SIZE', style: kLabelTextStyle,),
+                                SizedBox(height: 5.0),
+                                DropdownButton<String>(
+                                  items: sizes,
+                                  onChanged: (String newValue) {
+                                    setState(() {
+                                      filterSize = newValue;
+                                    });
+                                  },
+                                  value: filterSize,
+                                ),
+                              ],
                             ),
                           ),
                         ),
@@ -182,14 +238,20 @@ class _GeneratorState extends State<Generator> {
                         cardChild: Center(
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: DropdownButton<String>(
-                              items: colors,
-                              onChanged: (String newValue) {
-                                setState(() {
-                                  filterColor = newValue;
-                                });
-                              },
-                              value: filterColor,
+                            child: Column(
+                              children: <Widget>[
+                                Text('COLOR', style: kLabelTextStyle,),
+                                SizedBox(height: 5.0),
+                                DropdownButton<String>(
+                                  items: colors,
+                                  onChanged: (String newValue) {
+                                    setState(() {
+                                      filterColor = newValue;
+                                    });
+                                  },
+                                  value: filterColor,
+                                ),
+                              ],
                             ),
                           ),
                         ),
@@ -250,6 +312,60 @@ class _GeneratorState extends State<Generator> {
                       ],
                     ),
                   ),
+                ),
+                Row(
+                  children: <Widget>[
+                    Expanded(
+                      child: ReusableCard(
+                        cardColor: kActiveCardColor,
+                        cardChild: Center(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: <Widget>[
+                                Text('STORIES', style: kLabelTextStyle,),
+                                SizedBox(height: 5.0),
+                                DropdownButton<String>(
+                                  items: stories,
+                                  onChanged: (String newValue) {
+                                    setState(() {
+                                      storyCount = newValue;
+                                    });
+                                  },
+                                  value: storyCount,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: ReusableCard(
+                        cardColor: kActiveCardColor,
+                        cardChild: Center(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: <Widget>[
+                                Text('PAYMENT', style: kLabelTextStyle,),
+                                SizedBox(height: 5.0),
+                                DropdownButton<String>(
+                                  items: payments,
+                                  onChanged: (String newValue) {
+                                    setState(() {
+                                      filterSize = paymentType;
+                                    });
+                                  },
+                                  value: paymentType,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
