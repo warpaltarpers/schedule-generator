@@ -118,6 +118,7 @@ class _GeneratorState extends State<Generator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -362,7 +363,7 @@ class _GeneratorState extends State<Generator> {
                                   items: payments,
                                   onChanged: (String newValue) {
                                     setState(() {
-                                      filterSize = paymentType;
+                                      paymentType = newValue;
                                     });
                                   },
                                   value: paymentType,
@@ -378,7 +379,8 @@ class _GeneratorState extends State<Generator> {
                 BottomButton(
                   buttonTitle: 'GENERATE',
                   onTap: (){
-                    Navigator.push(context, MaterialPageRoute(
+                    if(jobNumCard.returnInput() != null && cityCard != null) {
+                      Navigator.push(context, MaterialPageRoute(
                       builder: (context) => BlockPage(
                         jobNum: jobNumCard.returnInput(),
                         location: cityCard.returnInput(),
@@ -389,6 +391,9 @@ class _GeneratorState extends State<Generator> {
                         stories: storyCount,
                         payment: paymentType,
                       )));
+                    } else {
+                      return;
+                    }
                   },
                 ),
               ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:leaffilter_generator/generator.dart';
+import 'package:leaffilter_generator/block_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,7 +10,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      home: Generator(),
+      initialRoute: '/',
+      routes: {
+        '/' : (context) => Generator(),
+        '/results' : (context) => BlockPage(),
+      },
     );
   }
 }

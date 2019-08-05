@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:leaffilter_generator/components/bottom_button.dart';
+import 'package:leaffilter_generator/components/reusable_card.dart';
+import 'package:leaffilter_generator/components/constants.dart';
 
 class BlockPage extends StatelessWidget {
 
@@ -14,6 +17,12 @@ class BlockPage extends StatelessWidget {
   final String stories;
   final String payment;
 
+  String getNextJobNum() {
+    var i = int.parse(jobNum);
+    i++;
+    return i.toString();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,8 +33,47 @@ class BlockPage extends StatelessWidget {
              colors: [const Color(0xff56ab2f), const Color(0xffa8e063)],
           )
         ),
-        child: Center(
-
+        child: SafeArea(
+          child: Column(
+            children: <Widget>[
+              ReusableCard(
+                cardColor: Colors.white,
+                cardChild: Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        getNextJobNum(),
+                        style: TextStyle(
+                          fontSize: 32.0,
+                        ),
+                      ),
+                      Text(
+                        '$jobFootage\' $filterSize $filterColor $stories ${miters}M',
+                        style: TextStyle(
+                          fontSize: 32.0,
+                        ),
+                      ),
+                      Text(
+                        '$location',
+                        style: TextStyle(
+                          fontSize: 32.0,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              BottomButton(
+                buttonTitle: 'RESET',
+                onTap: (){
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
