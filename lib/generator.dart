@@ -15,6 +15,7 @@ class _GeneratorState extends State<Generator> {
   TextCard cityCard = new TextCard(label: 'LOCATION', isAndroid: Platform.isAndroid ? true : false,);
   
   int jobFoot = 0;
+  int numMiters = 0;
   String filterSize = '5\"';
   String filterColor = 'W';
 
@@ -154,6 +155,7 @@ class _GeneratorState extends State<Generator> {
                 // Filter type and size
                 Row(
                   children: <Widget>[
+                    // Filter size dropdown
                     Expanded(
                       child: ReusableCard(
                         cardColor: kActiveCardColor,
@@ -174,6 +176,7 @@ class _GeneratorState extends State<Generator> {
                       ),
                     ),
                     Expanded(
+                      // Filter color dropdown
                       child: ReusableCard(
                         cardColor: kActiveCardColor,
                         cardChild: Center(
@@ -193,6 +196,60 @@ class _GeneratorState extends State<Generator> {
                       ),
                     ),
                   ],
+                ),
+                // Miter slider
+                Expanded(
+                  child: ReusableCard(
+                    cardColor: kActiveCardColor,
+                    cardChild: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text(
+                          '# OF MITERS',
+                          style: kLabelTextStyle,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.baseline,
+                          textBaseline: TextBaseline.alphabetic,
+                          children: <Widget>[
+                            Text(
+                              numMiters.toString(),
+                              style: kNumberTextStyle,
+                            ),
+                            Text(
+                              ' miters',
+                              style: kLabelTextStyle,
+                            ),
+                          ],
+                        ),
+                        SliderTheme(
+                          data: SliderTheme.of(context).copyWith(
+                            thumbColor: Colors.white,
+                            overlayColor: Color(0x29FFFFFF),
+                            thumbShape: RoundSliderThumbShape(
+                              enabledThumbRadius: 15.0,
+                            ),
+                            overlayShape: RoundSliderOverlayShape(
+                              overlayRadius: 30.0,
+                            ),
+                            activeTrackColor: Colors.white,
+                            inactiveTrackColor: Color(0xFFb9e682),
+                          ),
+                          child: Slider(
+                            value: numMiters.toDouble(),
+                            min: 0.0,
+                            max: 100.0,
+                            onChanged: (double newValue) {
+                              setState(() {
+                                numMiters = newValue.round();
+                              });
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),
