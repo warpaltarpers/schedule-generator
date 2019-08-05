@@ -16,7 +16,7 @@ class _GeneratorState extends State<Generator> {
   
   int jobFoot = 0;
   String filterSize = '5\"';
-  String filterColor;
+  String filterColor = 'W';
 
   List<DropdownMenuItem<String>> sizes = [
     DropdownMenuItem(
@@ -41,8 +41,24 @@ class _GeneratorState extends State<Generator> {
     ),
   ];
 
-  //TODO 2: Re-List as DropdownMenuItems
-  List<String> colors = ['W', 'C', 'B', 'G']; // White, Clay, Beige, Gray
+  List<DropdownMenuItem<String>> colors = [
+    DropdownMenuItem(
+      value: 'W',
+      child: Text('W'),
+    ),
+    DropdownMenuItem(
+      value: 'C',
+      child: Text('C'),
+    ),
+    DropdownMenuItem(
+      value: 'B',
+      child: Text('B'),
+    ),
+    DropdownMenuItem(
+      value: 'G',
+      child: Text('G'),
+    ),
+  ]; // White, Clay, Beige, Gray
 
   List<Text> pickerItems = [];
   
@@ -140,33 +156,38 @@ class _GeneratorState extends State<Generator> {
                   children: <Widget>[
                     Expanded(
                       child: ReusableCard(
-                        cardColor: kInactiveCardColor,
+                        cardColor: kActiveCardColor,
                         cardChild: Center(
-                          child: DropdownButton<String>(
-                            items: sizes,
-                            onChanged: (String newValue) {
-                              setState(() {
-                                filterSize = newValue;
-                              });
-                            },
-                            value: filterSize,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: DropdownButton<String>(
+                              items: sizes,
+                              onChanged: (String newValue) {
+                                setState(() {
+                                  filterSize = newValue;
+                                });
+                              },
+                              value: filterSize,
+                            ),
                           ),
                         ),
                       ),
                     ),
                     Expanded(
-                      //TODO 2: Add in selection for filter color
                       child: ReusableCard(
-                        cardColor: kInactiveCardColor,
+                        cardColor: kActiveCardColor,
                         cardChild: Center(
-                          child: DropdownButton<String>(
-                            items: sizes,
-                            onChanged: (String newValue) {
-                              setState(() {
-                                filterSize = newValue;
-                              });
-                            },
-                            value: filterSize,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: DropdownButton<String>(
+                              items: colors,
+                              onChanged: (String newValue) {
+                                setState(() {
+                                  filterColor = newValue;
+                                });
+                              },
+                              value: filterColor,
+                            ),
                           ),
                         ),
                       ),
