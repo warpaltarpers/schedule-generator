@@ -5,6 +5,7 @@ import 'package:leaffilter_generator/components/constants.dart';
 import 'package:leaffilter_generator/components/text_card.dart';
 import 'dart:io' show Platform;
 import 'components/bottom_button.dart';
+import 'package:leaffilter_generator/block_page.dart';
 
 class Generator extends StatefulWidget {
   @override
@@ -376,7 +377,19 @@ class _GeneratorState extends State<Generator> {
                 ),
                 BottomButton(
                   buttonTitle: 'GENERATE',
-                  onTap: (){},
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) => BlockPage(
+                        jobNum: jobNumCard.returnInput(),
+                        location: cityCard.returnInput(),
+                        jobFootage: jobFoot,
+                        filterSize: filterSize,
+                        filterColor: filterColor,
+                        miters: numMiters,
+                        stories: storyCount,
+                        payment: paymentType,
+                      )));
+                  },
                 ),
               ],
             ),

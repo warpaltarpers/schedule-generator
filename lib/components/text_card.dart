@@ -11,6 +11,10 @@ class TextCard extends StatelessWidget {
 
   String textInput;
 
+  String returnInput() {
+    return textInput;
+  }
+
   TextField androidText() {
     return TextField(
       decoration: InputDecoration(
