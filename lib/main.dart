@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:leaffilter_generator/generator.dart';
+import 'package:leaffilter_generator/generator_scroll.dart';
 import 'package:leaffilter_generator/block_page.dart';
 
 void main() => runApp(MyApp());
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       initialRoute: '/',
       routes: {
-        '/' : (context) => Generator(),
+        '/' : (context) => GeneratorScroll(),
         '/results' : (context) => BlockPage(),
       },
     );
