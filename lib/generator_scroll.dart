@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:leaffilter_generator/components/all.dart';
 import 'dart:io' show Platform;
 import 'package:leaffilter_generator/block_page.dart';
+import 'package:leaffilter_generator/components/all.dart';
 
 class GeneratorScroll extends StatefulWidget {
   @override
@@ -70,6 +71,17 @@ class _GeneratorScrollState extends State<GeneratorScroll> {
                       crossAxisAlignment: CrossAxisAlignment.baseline,
                       textBaseline: TextBaseline.alphabetic,
                       children: <Widget>[
+                        RoundIconButton(
+                          icon: Icons.remove,
+                          onPressed: (){
+                            setState(() {
+                              jobFoot--;
+                            });
+                          },
+                        ),
+                        SizedBox(
+                          width: 20.0,
+                        ),
                         Text(
                           jobFoot.toString(),
                           style: kNumberTextStyle,
@@ -77,6 +89,17 @@ class _GeneratorScrollState extends State<GeneratorScroll> {
                         Text(
                           ' ft',
                           style: kLabelTextStyle,
+                        ),
+                        SizedBox(
+                          width: 20.0,
+                        ),
+                        RoundIconButton(
+                          icon: Icons.add,
+                          onPressed: (){
+                            setState(() {
+                              jobFoot++;
+                            });
+                          },
                         ),
                       ],
                     ),
@@ -179,6 +202,17 @@ class _GeneratorScrollState extends State<GeneratorScroll> {
                       crossAxisAlignment: CrossAxisAlignment.baseline,
                       textBaseline: TextBaseline.alphabetic,
                       children: <Widget>[
+                        RoundIconButton(
+                          icon: Icons.remove,
+                          onPressed: (){
+                            setState(() {
+                              gutterFoot--;
+                            });
+                          },
+                        ),
+                        SizedBox(
+                          width: 20.0,
+                        ),
                         Text(
                           gutterFoot.toString(),
                           style: kNumberTextStyle,
@@ -186,6 +220,17 @@ class _GeneratorScrollState extends State<GeneratorScroll> {
                         Text(
                           ' ft',
                           style: kLabelTextStyle,
+                        ),
+                        SizedBox(
+                          width: 20.0,
+                        ),
+                        RoundIconButton(
+                          icon: Icons.add,
+                          onPressed: (){
+                            setState(() {
+                              gutterFoot++;
+                            });
+                          },
                         ),
                       ],
                     ),
@@ -255,6 +300,17 @@ class _GeneratorScrollState extends State<GeneratorScroll> {
                       crossAxisAlignment: CrossAxisAlignment.baseline,
                       textBaseline: TextBaseline.alphabetic,
                       children: <Widget>[
+                        RoundIconButton(
+                          icon: Icons.remove,
+                          onPressed: (){
+                            setState(() {
+                              numMiters--;
+                            });
+                          },
+                        ),
+                        SizedBox(
+                          width: 20.0,
+                        ),
                         Text(
                           numMiters.toString(),
                           style: kNumberTextStyle,
@@ -262,6 +318,17 @@ class _GeneratorScrollState extends State<GeneratorScroll> {
                         Text(
                           ' miters',
                           style: kLabelTextStyle,
+                        ),
+                        SizedBox(
+                          width: 20.0,
+                        ),
+                        RoundIconButton(
+                          icon: Icons.add,
+                          onPressed: (){
+                            setState(() {
+                              numMiters++;
+                            });
+                          },
                         ),
                       ],
                     ),
