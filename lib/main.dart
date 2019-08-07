@@ -10,11 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      initialRoute: '/',
-      routes: {
-        '/' : (context) => GeneratorScroll(),
-        '/results' : (context) => BlockPage(),
-      },
+      home: new GeneratorScroll(),
     );
   }
 }
