@@ -25,6 +25,7 @@ class TextCard extends StatelessWidget {
       onChanged: (value){
         textInput = value;
       },
+      maxLines: null,
     );
   }
 

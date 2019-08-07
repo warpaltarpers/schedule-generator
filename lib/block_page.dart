@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:leaffilter_generator/components/bottom_button.dart';
 import 'package:leaffilter_generator/components/reusable_card.dart';
 import 'package:leaffilter_generator/components/constants.dart';
+import 'package:leaffilter_generator/components/text_card.dart';
+import 'dart:io' show Platform;
 
 class BlockPage extends StatelessWidget {
 
-  BlockPage({@required this.jobNum, @required this.location, @required this.filterSize, @required this.filterColor, @required this.miters, @required this.jobFootage, @required this.stories, @required this.payment});
+  BlockPage({@required this.jobNum, @required this.location, @required this.filterSize, @required this.filterColor, @required this.miters, @required this.jobFootage, @required this.stories, @required this.gutterFoot, @required this.gutterSize, @required this.payment});
   
   final String jobNum;
   final String location;
@@ -15,6 +17,8 @@ class BlockPage extends StatelessWidget {
   final int miters;
   final int jobFootage;
   final String stories;
+  final int gutterFoot;
+  final String gutterSize;
   final String payment;
 
   String getNextJobNum() {
@@ -51,19 +55,32 @@ class BlockPage extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        '$jobFootage\' $filterSize $filterColor $stories ${miters}M',
+                        '$jobFootage\' $filterSize $filterColor $stories story ${miters}M',
                         style: TextStyle(
                           fontSize: 32.0,
                         ),
                       ),
                       Text(
-                        '$location',
+                        '$gutterFoot\' gutter $gutterSize',
+                        style: TextStyle(
+                          fontSize: 32.0,
+                        ),
+                      ),
+                      Text(
+                        '$location  $payment',
                         style: TextStyle(
                           fontSize: 32.0,
                         ),
                       ),
                     ],
                   ),
+                ),
+              ),
+              ReusableCard(
+                cardColor: kActiveCardColor,
+                cardChild: TextCard(
+                  label: 'NOTES',
+                  isAndroid: Platform.isAndroid ? true : false,
                 ),
               ),
               BottomButton(

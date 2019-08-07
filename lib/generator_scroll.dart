@@ -17,9 +17,11 @@ class _GeneratorScrollState extends State<GeneratorScroll> {
   TextCard cityCard = new TextCard(label: 'LOCATION', isAndroid: Platform.isAndroid ? true : false,);
   
   int jobFoot = 0;
+  int gutterFoot = 0;
   int numMiters = 0;
   String filterSize = '5\"';
   String filterColor = 'W';
+  String gutterSize = '5\"';
   String storyCount = '1';
   String paymentType = 'C';
 
@@ -43,6 +45,17 @@ class _GeneratorScrollState extends State<GeneratorScroll> {
     DropdownMenuItem(
       value: 'HR 7\"',
       child: Text('HR 7\"'),
+    ),
+  ];
+
+  List<DropdownMenuItem<String>> gSizes = [
+    DropdownMenuItem(
+      value: '5\"',
+      child: Text('5\"'),
+    ),
+    DropdownMenuItem(
+      value: '6\"',
+      child: Text('6\"'),
     ),
   ];
 
@@ -263,6 +276,82 @@ class _GeneratorScrollState extends State<GeneratorScroll> {
                     Padding(
                       padding: const EdgeInsets.only(top: 15.0),
                       child: Text(
+                        'GUTTER FOOTAGE',
+                        style: kLabelTextStyle,
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                      textBaseline: TextBaseline.alphabetic,
+                      children: <Widget>[
+                        Text(
+                          gutterFoot.toString(),
+                          style: kNumberTextStyle,
+                        ),
+                        Text(
+                          ' ft',
+                          style: kLabelTextStyle,
+                        ),
+                      ],
+                    ),
+                    SliderTheme(
+                      data: SliderTheme.of(context).copyWith(
+                        thumbColor: Colors.white,
+                        overlayColor: Color(0x29FFFFFF),
+                        thumbShape: RoundSliderThumbShape(
+                          enabledThumbRadius: 15.0,
+                        ),
+                        overlayShape: RoundSliderOverlayShape(
+                          overlayRadius: 30.0,
+                        ),
+                        activeTrackColor: Colors.white,
+                        inactiveTrackColor: Color(0xFFb9e682),
+                      ),
+                      child: Slider(
+                        value: gutterFoot.toDouble(),
+                        min: 0.0,
+                        max: 1000.0,
+                        onChanged: (double newValue) {
+                          setState(() {
+                            gutterFoot = newValue.round();
+                          });
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              ReusableCard(
+                cardColor: kActiveCardColor,
+                cardChild: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: <Widget>[
+                        Text('GUTTER SIZE', style: kLabelTextStyle,),
+                        SizedBox(height: 5.0),
+                        DropdownButton<String>(
+                          items: gSizes,
+                          onChanged: (String newValue) {
+                            setState(() {
+                              gutterSize = newValue;
+                            });
+                          },
+                          value: gutterSize,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              ReusableCard(
+                cardColor: kActiveCardColor,
+                cardChild: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(top: 15.0),
+                      child: Text(
                         '# OF MITERS',
                         style: kLabelTextStyle,
                       ),
@@ -377,6 +466,8 @@ class _GeneratorScrollState extends State<GeneratorScroll> {
                       miters: numMiters,
                       stories: storyCount,
                       payment: paymentType,
+                      gutterFoot: gutterFoot,
+                      gutterSize: gutterSize,
                     )));
                   } else {
                     return;
