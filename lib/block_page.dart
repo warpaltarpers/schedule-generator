@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:leaffilter_generator/components/bottom_button.dart';
-import 'package:leaffilter_generator/components/reusable_card.dart';
-import 'package:leaffilter_generator/components/constants.dart';
-import 'package:leaffilter_generator/components/text_card.dart';
+import 'package:schedule_generator/components/bottom_button.dart';
+import 'package:schedule_generator/components/reusable_card.dart';
+import 'package:schedule_generator/components/constants.dart';
+import 'package:schedule_generator/components/text_card.dart';
 import 'dart:io' show Platform;
 
 class BlockPage extends StatelessWidget {

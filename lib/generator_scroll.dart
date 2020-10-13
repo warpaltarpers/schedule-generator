@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:leaffilter_generator/components/all.dart';
+import 'package:schedule_generator/components/all.dart';
 import 'dart:io' show Platform;
-import 'package:leaffilter_generator/block_page.dart';
-import 'package:leaffilter_generator/components/all.dart';
+import 'package:schedule_generator/block_page.dart';
+import 'package:schedule_generator/components/all.dart';
 
 class GeneratorScroll extends StatefulWidget {
   @override

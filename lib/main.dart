@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:leaffilter_generator/generator_scroll.dart';
-import 'package:leaffilter_generator/block_page.dart';
+import 'package:schedule_generator/generator_scroll.dart';
+import 'package:schedule_generator/block_page.dart';
 
 void main() => runApp(MyApp());
 

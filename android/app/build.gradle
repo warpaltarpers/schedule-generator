@@ -32,7 +32,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.example.leaffilter_generator"
+        applicationId "com.example.schedule_generator"
         minSdkVersion 16
         targetSdkVersion 28
         versionCode 3

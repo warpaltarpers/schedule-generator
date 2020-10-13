@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:leaffilter_generator/components/constants.dart';
+import 'package:schedule_generator/components/constants.dart';
 
 class RoundIconButton extends StatelessWidget {
   
